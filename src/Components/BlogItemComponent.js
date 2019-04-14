@@ -1,5 +1,4 @@
 import React from 'react';
-import MarkdownToHtml from '../Components/MarkdownToHtmlComponent';
 
 const BlogItemComponent = (props) => {
 
@@ -19,7 +18,7 @@ const BlogItemComponent = (props) => {
           <span> {props.blog.day} <br /> {props.blog.month}</span>
         </div>
 
-        <a href="">
+        <a href="#{props.blog.id}">
           <h3>{props.blog.title}</h3>
         </a>
 
@@ -34,7 +33,7 @@ const BlogItemComponent = (props) => {
 
   )
 
-  return <div class="col-md-6 col-lg-4" >{blogItem}</div>
+  return <div class="col-md-6 col-lg-4">{blogItem}</div>
 }
 
 export default BlogItemComponent

@@ -3,19 +3,20 @@ import BlogItem from '../Components/BlogItemComponent';
 
 const BlogItemListComponent = (props) => {
 
-console.log("props.blogs.length " + props.blogs.length);
-  const blogsList = props.blogs.map((blog) => {
+  console.log("props.blogs.length " + props.blogs.length);
 
+  const blogsList = props.blogs.map((blog) => {
     return (
       <div class="row blog-item-card">
         {
-          blog.items.map((item) => {
-          
-          return (
-            <BlogItem blog={item} />
-          )
 
-        })}
+          blog.items.map((item) => {
+
+            return (
+              <BlogItem blog={item} />
+            )
+
+          })}
       </div>
     )
 

@@ -91,7 +91,7 @@ class BodyContainer extends React.Component {
         }
 
         console.log("index : " + i);
-        if (position == data.length && items.length > 0) {
+        if (position === data.length && items.length > 0) {
           this.blogs.push({ items: items });
           console.log("Pushed to blogs at index : " + i);
         }
@@ -156,23 +156,6 @@ class BodyContainer extends React.Component {
 
       // this.setState({ blogs: this.blogs });
     }
-  }
-
-  showInGroup() {
-    var length = this.state.blogs.length;
-    console.log("1length : " + length);
-    const colmBlogs = [];
-    let i = 0;
-    let rowNumber = 1;
-
-    this.state.blogs.map((blog) => {
-      return (
-        blog.items.map((item) => {
-          console.log(item.title);
-        })
-      )
-    });
-
   }
 
   render() {
