@@ -1,45 +1,13 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 /****/
 h1, p {
   font-family: Lato;
 }
 /** Custom styles fron code pen **/
 
-
+body
+{
+  font-family: Lato;
+}
 
 span, a, a:hover {
     display: inline-block;
@@ -52,13 +20,13 @@ span, a, a:hover {
 }
 .blog-head {
   margin-bottom: 70px;
+  font-family: lato;
 }
 
 .blog-head h6{
-  color: #f05907;
+  color: #555;
   position: relative;
-  display: inline-block;
-  text-transform: capitalize;
+  display: inline-block;  
 }
 
 .blog-head h6:after, .blog-head h6:before{
@@ -89,8 +57,8 @@ span, a, a:hover {
 }
 .blog{
   background-color: #f7f7f7;
-      padding: 150px 0;
-    min-height: 180vh;
+  padding: 80px 0;
+  min-height: 180vh;
 }
 
 .blog .item{
@@ -182,4 +150,13 @@ div.info > a {
 div.blog-item-card
 {
   padding:1%;
+}
+
+p.post-date {
+	height: 10px;
+	padding: 18px 0 14px 0;
+  text-align: left;
+  font-size: 15px;
+  color: #999;
+  font-family: Lato;
 }

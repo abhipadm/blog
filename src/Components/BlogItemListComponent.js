@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogItem from '../Components/BlogItemComponent';
+import BlogPost from '../Components/BlogPostComponent';
 
 const BlogItemListComponent = (props) => {
 
@@ -22,6 +23,18 @@ const BlogItemListComponent = (props) => {
 
   });
 
+  const blogsDetailList = props.blogs.map((blog) => {
+    return (
+      blog.items.map((item) => {
+
+        return (
+          <BlogPost blog={item} />
+        )
+      })
+    )
+
+  });
+
 
   return (
 
@@ -30,12 +43,14 @@ const BlogItemListComponent = (props) => {
       {/* header of section */}
       <div class="blog-head text-center">
         <h2>Debug Inside</h2>
-        <h6>Simplicity is the most complicated thing until we learn how to break down the complexity.....</h6>
+        <h6>Simplicity is the most complicated thing,<br /> until we learn how to break down the complexity.....</h6>
       </div>
 
       {/*<!-- blog items */}
       {blogsList}
 
+      {/** blog content detail/body */}
+      {blogsDetailList}
     </div>
 
   );

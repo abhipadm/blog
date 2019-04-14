@@ -24,8 +24,8 @@ const BlogItemComponent = (props) => {
 
         <p>{props.blog.info}</p>
 
-        <a href="#0" class="user"><i class="fas fa-user"></i>Admin</a>
-        <a href="#0" class="more"><i class="fas fa-long-arrow-alt-right"></i></a>
+        <a href="https://github.com/abhi-debuginside" class="user"><i class="fas fa-user"></i>Admin</a>
+        <a href={("#" + props.blog.id)} class="more"><i class="fas fa-long-arrow-alt-right"></i></a>
 
       </div>
 

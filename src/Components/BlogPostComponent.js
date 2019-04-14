@@ -14,10 +14,8 @@ const BlogPostComponent = (props) => {
 
             {/* info */}
             <div class="info">
+                <p class="post-date"> {props.blog.day} {props.blog.month}, {props.blog.year}</p>
 
-                <div class="date">
-                    <span> {props.blog.day} <br /> {props.blog.month}</span>
-                </div>
                 <h3>{props.blog.title}</h3>
                 <MarkdownToHtml contentText={props.blog.body} />
             </div>
@@ -26,7 +24,7 @@ const BlogPostComponent = (props) => {
 
     )
 
-    return <div class="row" >{blogPost}</div>
+    return <div class="row text-left" >{blogPost}</div>
 }
 
 export default BlogPostComponent
