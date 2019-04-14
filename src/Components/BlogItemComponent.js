@@ -3,38 +3,38 @@ import MarkdownToHtml from '../Components/MarkdownToHtmlComponent';
 
 const BlogItemComponent = (props) => {
 
-  const blogItem = (   
-   
-        <div class="item" key={props.blog.position}>
+  const blogItem = (
 
-          {/* image */}
-          <div class="img">
-            <img src="" alt="" />
-          </div>
+    <div class="item" key={props.blog.position}>
 
-          {/* info */}
-          <div class="info">
+      {/* image */}
+      <div class="img">
+        <img src="" alt="" />
+      </div>
 
-            <div class="date">
-              <span> { new Date(props.blog.createdOn).getDate()} <br /> { new Date(props.blog.createdOn).getMonth()}</span>
-            </div>
+      {/* info */}
+      <div class="info">
 
-            <a href="">
-              <h3>{ props.blog.title}</h3>
-            </a>
-
-            <p>{ props.blog.info}</p>
-
-            <a href="#0" class="user"><i class="fas fa-user"></i>Admin</a>
-            <a href="#0" class="more"><i class="fas fa-long-arrow-alt-right"></i></a>
-
-          </div>
-
+        <div class="date">
+          <span> {props.blog.day} <br /> {props.blog.month}</span>
         </div>
-    
+
+        <a href="">
+          <h3>{props.blog.title}</h3>
+        </a>
+
+        <p>{props.blog.info}</p>
+
+        <a href="#0" class="user"><i class="fas fa-user"></i>Admin</a>
+        <a href="#0" class="more"><i class="fas fa-long-arrow-alt-right"></i></a>
+
+      </div>
+
+    </div>
+
   )
 
-  return   <div class="col-md-6 col-lg-4" >{ blogItem }</div>
+  return <div class="col-md-6 col-lg-4" >{blogItem}</div>
 }
 
 export default BlogItemComponent

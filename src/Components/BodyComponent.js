@@ -16,6 +16,7 @@ class BodyContainer extends React.Component {
   }
 
   blogs = [];
+  monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   componentDidMount() {
     this.bindBlogItemsToDomElement();
@@ -24,7 +25,7 @@ class BodyContainer extends React.Component {
   getBlogList() {
     console.log("calling getBlogList");
     const apiService = new ApiService();
-    const url = 'https://api.github.com/repos/abhi-debuginside/blog/issues';
+    const url = 'https://api.github.com/repos/abhi-debuginside/blog/issues?state=closed';
     //const url = 'https://api.github.com/repos/abhi-debuginside/abhi-debuginside.github.io/issues';
 
     var result = apiService.getData(url);
@@ -41,7 +42,7 @@ class BodyContainer extends React.Component {
           //console.log("count : " + count);
 
           let info = data[i].body.substring(0, 150);
-          let createdOn = new Date(data[i].created_at);
+          let createdOnDate = new Date(data[i].created_at);
 
           if (data[i].milestone) {
             if (data[i].milestone.description) {
@@ -49,11 +50,28 @@ class BodyContainer extends React.Component {
             }
 
             if (data[i].milestone.due_on) {
-              createdOn = new Date(data[i].milestone.due_on);
+              createdOnDate = new Date(data[i].milestone.due_on);
             }
           }
+          let createdOn = {
+            day: createdOnDate.getDate(),
+            month: this.monthNames[createdOnDate.getMonth()],
+            year: createdOnDate.getFullYear()
+          };
 
-          items.push({ position: position, title: data[i].title, body: data[i].body, info: info, createdOn: createdOn });
+          items.push(
+            {
+              position: position,
+              id: data[i].id,
+              title: data[i].title,
+              body: data[i].body,
+              info: info,
+              createdOnDate: createdOnDate,
+              day: createdOn.day,
+              month: createdOn.month,
+              year: createdOn.year
+            });
+
           console.log("items for count - " + count);
           console.log(items);
           count++;
