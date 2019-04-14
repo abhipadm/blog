@@ -1,5 +1,7 @@
 import React from 'react';
 import Markdown from 'react-markdown';
+import Prism from "prismjs";
+import "../prism.css";
 
 class MarkdownToHtmlComponent extends React.Component {
   constructor(props) {
@@ -7,6 +9,10 @@ class MarkdownToHtmlComponent extends React.Component {
     this.state = {
       contentText: this.props.contentText
     };
+  }
+
+  componentDidMount() {
+    Prism.highlightAll();
   }
 
   render() {
