@@ -42,6 +42,7 @@ class BodyContainer extends React.Component {
           //console.log("count : " + count);
 
           let info = data[i].body.substring(0, 150);
+          let cardTitle = data[i].title.substring(0, 58) + " ...";
           let createdOnDate = new Date(data[i].created_at);
 
           if (data[i].milestone) {
@@ -59,13 +60,17 @@ class BodyContainer extends React.Component {
             year: createdOnDate.getFullYear()
           };
 
+          let cardInfo = info.length > 90 ? info.substring(0, 90) + " ..." : info.substring(0, 90);
+
           items.push(
             {
               position: position,
               id: data[i].id,
               title: data[i].title,
+              cardTitle: cardTitle,
               body: data[i].body,
               info: info,
+              cardInfo: cardInfo,
               createdOnDate: createdOnDate,
               day: createdOn.day,
               month: createdOn.month,
@@ -113,48 +118,6 @@ class BodyContainer extends React.Component {
     }
     else {
       this.getBlogList();
-      // this.blogs = [
-      //   {
-      //     items: [
-      //       {
-      //         position: 1,
-      //         title: 'Test Blog 1',
-      //         body: 'Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.',
-      //         info: 'Test blog 1 Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.'
-      //       },
-      //       {
-      //         position: 2,
-      //         title: 'Test Blog 2',
-      //         body: 'Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.',
-      //         info: 'Test blog 1 Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.'
-      //       },
-      //       {
-      //         position: 3,
-      //         title: 'Test Blog 3',
-      //         body: 'Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.',
-      //         info: 'Test blog 1 Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     items: [
-      //       {
-      //         position: 4,
-      //         title: 'Test Blog 4',
-      //         body: 'Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.',
-      //         info: 'Test blog 1 Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.'
-      //       },
-      //       {
-      //         position: 5,
-      //         title: 'Test Blog 5',
-      //         body: 'Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.',
-      //         info: 'Test blog 1 Lorem ipsum dolor sit amet conse ctetur, adipi sicing elit. Nisi sapiente hic fugiat delectus dicta delectus dicta.'
-      //       }
-      //     ]
-      //   }
-      // ];
-
-      // this.setState({ blogs: this.blogs });
     }
   }
 

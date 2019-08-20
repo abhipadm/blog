@@ -160,3 +160,9 @@ p.post-date {
   color: #999;
   font-family: Lato;
 }
+
+/*Modifid on 20th Aug 2019 */
+.info-title{
+  max-height: 74px;
+  overflow: hidden;
+}

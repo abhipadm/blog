@@ -18,13 +18,12 @@ const BlogItemComponent = (props) => {
           <span> {props.blog.day} <br /> {props.blog.month}</span>
         </div>
 
-        <a href="#{props.blog.id}">
-          <h3>{props.blog.title}</h3>
+        <a href={("#" + props.blog.id)} className="info-title">
+          <h4>{props.blog.cardTitle}</h4>
         </a>
 
-        <p>{props.blog.info}</p>
+        <p>{props.blog.cardInfo}</p>
 
-        <a href="https://github.com/abhi-debuginside" class="user"><i class="fas fa-user"></i>Admin</a>
         <a href={("#" + props.blog.id)} class="more"><i class="fas fa-long-arrow-alt-right"></i></a>
 
       </div>
