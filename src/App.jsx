@@ -1,16 +1,31 @@
 import React from "react";
-import "./App.css";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+
+import MainPage from "./pages/MainPage";
+
+const theme = createMuiTheme({
+  palette: {
+    type: "dark",
+    primary: {
+      light: "#4ebaaa",
+      main: "#00897b",
+      dark: "#005b4f",
+      contrastText: "#000000",
+    },
+    secondary: {
+      light: "#ffff89",
+      main: "#d4e157",
+      dark: "#a0af22",
+      contrastText: "#000",
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code> src / App.js </code> and save to reload.{" "}
-        </p>{" "}
-        <h1> Learn React !!! </h1>{" "}
-      </header>{" "}
-    </div>
+    <ThemeProvider theme={theme}>
+      <MainPage />
+    </ThemeProvider>
   );
 }
 
