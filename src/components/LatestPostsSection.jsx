@@ -1,21 +1,38 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import {
-  GridList,
+  Grid,
   GridListTile,
-  GridListTileBar,
   ListSubheader,
   Typography,
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Button,
 } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import InfoIcon from "@material-ui/icons/Info";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   latestPostSubheader: {
     color: theme.palette.secondary.main,
   },
-  listTitleBar: {
+  postCard: {
+    minHeight: 330,
+    padding: theme.spacing(1),
+  },
+  cardMedia: {
+    height: 140,
+  },
+  cardActionArea: {
+    minHeight: 300,
+  },
+  cardContent: {
+    paddingTop: theme.spacing(3),
+  },
+  shortDescription: {
+    overflow: "Hidden",
     whiteSpace: "break-spaces",
   },
 }));
@@ -25,35 +42,53 @@ const LatestPostsSection = (props) => {
   const { latestPosts } = props;
 
   return (
-    <GridList cols={3}>
-      <GridListTile key="Subheader" cols={3} style={{ height: "auto" }}>
-        <ListSubheader component="div" className={classes.latestPostSubheader}>
-          <Typography variant="h4" component="h5" color="inherit">
-            Latest Posts
-          </Typography>
-        </ListSubheader>
-      </GridListTile>
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <Typography variant="h4" component="h5" color="inherit">
+          Latest Posts
+        </Typography>
+      </Grid>
 
       {latestPosts.map((post) => (
-        <GridListTile key={post.img}>
-          <img src={post.img} alt={post.title} />
-          <GridListTileBar
-            className={classes.listTitleBar}
-            titlePosition="top"
-            title={post.title}
-            subtitle={<p>{post.shortDescription}</p>}
-            actionIcon={
-              <IconButton
-                aria-label={`info about ${post.title}`}
-                className={classes.icon}
-              >
-                <InfoIcon />
-              </IconButton>
-            }
-          />
-        </GridListTile>
+        <Grid item xs={12} md={4} key={post.id}>
+          <Card className={classes.postCard}>
+            <CardActionArea className={classes.CardActionArea}>
+              <CardMedia
+                component="img"
+                alt={post.title}
+                image={post.img}
+                title={post.title}
+                className={classes.cardMedia}
+              />
+              <CardContent className={classes.cardContent}>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  color="primary"
+                >
+                  {post.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className={classes.shortDescription}
+                  color="textSecondary"
+                  component="p"
+                >
+                  {post.shortDescription}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+
+            <CardActions disableSpacing>
+              <Button size="small" color="primary">
+                Read More
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
       ))}
-    </GridList>
+    </Grid>
   );
 };
 

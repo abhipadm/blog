@@ -16,18 +16,21 @@ const blogCover = {
 
 const latestPosts = [
   {
+    id: 1,
     title: "title1",
     img: "https://source.unsplash.com/1080x350/?technology",
     shortDescription:
       "Debug Inside a private developer journal/blog, focusing on the web application.",
   },
   {
+    id: 2,
     title: "title2",
     img: "https://source.unsplash.com/1080x350/?technology",
     shortDescription:
       "Debug Inside a private developer journal/blog, focusing on the web application.Debug Inside a private developer journal/blog, focusing on the web application.Debug Inside a private developer journal/blog, focusing on the web application.",
   },
   {
+    id: 3,
     title: "title3",
     img: "https://source.unsplash.com/1080x350/?technology",
     shortDescription:
