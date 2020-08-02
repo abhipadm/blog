@@ -1,6 +1,8 @@
 import React from "react";
-import Header from "../components/shared/header";
-import BlogCoverDetails from "../components/blog/BlogCoverDetails";
+import { makeStyles } from "@material-ui/core/styles";
+
+import Header from "../components/Header";
+import CoverSection from "../components/CoverSection";
 
 const blogCover = {
   title:
@@ -11,11 +13,19 @@ const blogCover = {
   imgText: "main image description",
 };
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+}));
+
 export default function MainPage() {
+  const classes = useStyles();
+
   return (
-    <>
+    <div className={classes.root}>
       <Header title="Debug Inside" />
-      <BlogCoverDetails blogCover={blogCover} />
-    </>
+      <CoverSection />
+    </div>
   );
 }
