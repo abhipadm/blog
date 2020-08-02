@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import Header from "../components/Header";
 import CoverSection from "../components/CoverSection";
+import LatestPostsSection from "../components/LatestPostsSection";
 
 const blogCover = {
   title:
@@ -12,6 +13,27 @@ const blogCover = {
   image: "https://source.unsplash.com/random",
   imgText: "main image description",
 };
+
+const latestPosts = [
+  {
+    title: "title1",
+    img: "https://source.unsplash.com/1080x350/?technology",
+    shortDescription:
+      "Debug Inside a private developer journal/blog, focusing on the web application.",
+  },
+  {
+    title: "title2",
+    img: "https://source.unsplash.com/1080x350/?technology",
+    shortDescription:
+      "Debug Inside a private developer journal/blog, focusing on the web application.Debug Inside a private developer journal/blog, focusing on the web application.Debug Inside a private developer journal/blog, focusing on the web application.",
+  },
+  {
+    title: "title3",
+    img: "https://source.unsplash.com/1080x350/?technology",
+    shortDescription:
+      "Debug Inside a private developer journal/blog, focusing on the web application developed.",
+  },
+];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +48,7 @@ export default function MainPage() {
     <div className={classes.root}>
       <Header title="Debug Inside" />
       <CoverSection />
+      <LatestPostsSection latestPosts={latestPosts} />
     </div>
   );
 }
