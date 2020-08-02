@@ -1,5 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import { Container } from "@material-ui/core";
 import {
   Grid,
   GridListTile,
@@ -15,8 +16,9 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  latestPostSubheader: {
-    color: theme.palette.secondary.main,
+  latestPostWrapper: {
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4),
   },
   postCard: {
     minHeight: 330,
@@ -42,7 +44,7 @@ const LatestPostsSection = (props) => {
   const { latestPosts } = props;
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={2} className={classes.latestPostWrapper}>
       <Grid item xs={12}>
         <Typography variant="h4" component="h5" color="inherit">
           Latest Posts
