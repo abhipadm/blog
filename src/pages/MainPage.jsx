@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Header from "../components/Header";
 import CoverSection from "../components/CoverSection";
 import LatestPostsSection from "../components/LatestPostsSection";
+import AllPostSection from "../components/AllPostSection";
 
 const blogCover = {
   title:
@@ -52,6 +53,7 @@ export default function MainPage() {
       <Header title="Debug Inside" />
       <CoverSection />
       <LatestPostsSection latestPosts={latestPosts} />
+      <AllPostSection allPosts={latestPosts} />
     </div>
   );
 }
