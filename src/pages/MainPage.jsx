@@ -5,6 +5,9 @@ import Header from "../components/Header";
 import CoverSection from "../components/CoverSection";
 import LatestPostsSection from "../components/LatestPostsSection";
 import AllPostSection from "../components/AllPostSection";
+import getBlogList from "../services/BlogPostService";
+
+getBlogList();
 
 const blogCover = {
   title:
@@ -17,7 +20,7 @@ const blogCover = {
 
 const latestPosts = [
   {
-    createdOn:'22-07-2020',
+    createdOn: "22-07-2020",
     id: 1,
     title: "title1",
     img: "https://source.unsplash.com/1080x350/?technology",
@@ -25,7 +28,7 @@ const latestPosts = [
       "Debug Inside a private developer journal/blog, focusing on the web application.",
   },
   {
-   createdOn:'22-07-2020',
+    createdOn: "22-07-2020",
     id: 2,
     title: "title2",
     img: "https://source.unsplash.com/1080x350/?technology",
@@ -33,7 +36,7 @@ const latestPosts = [
       "Debug Inside a private developer journal/blog, focusing on the web application.Debug Inside a private developer journal/blog, focusing on the web application.Debug Inside a private developer journal/blog, focusing on the web application.",
   },
   {
-    createdOn:'22-07-2020',
+    createdOn: "22-07-2020",
     id: 3,
     title: "title3",
     img: "https://source.unsplash.com/1080x350/?technology",

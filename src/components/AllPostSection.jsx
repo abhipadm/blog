@@ -27,34 +27,29 @@ const AllPostSection = (props) => {
   const { allPosts } = props;
   const classes = useStyles();
   return (
-    
-       <Timeline align="alternate">    
-       {allPosts.map(post => (
-      <TimelineItem>
-        <TimelineOppositeContent>
-          <Typography variant="body2">
-            {post.createdOn}
-          </Typography>
-        </TimelineOppositeContent>
+    <Timeline align="alternate">
+      {allPosts.map((post) => (
+        <TimelineItem key={post.id}>
+          <TimelineOppositeContent>
+            <Typography variant="body2">{post.createdOn}</Typography>
+          </TimelineOppositeContent>
 
-        <TimelineSeparator>
-          <TimelineDot color="primary"></TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
+          <TimelineSeparator>
+            <TimelineDot color="primary"></TimelineDot>
+            <TimelineConnector />
+          </TimelineSeparator>
 
-        <TimelineContent>
-          <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
-              {post.title}
-            </Typography>
-            <Typography>{post.shortDescription}</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-         ))  }
+          <TimelineContent>
+            <Paper elevation={3} className={classes.paper}>
+              <Typography variant="h6" component="h1">
+                {post.title}
+              </Typography>
+              <Typography>{post.shortDescription}</Typography>
+            </Paper>
+          </TimelineContent>
+        </TimelineItem>
+      ))}
     </Timeline>
-
- 
   );
 };
 
