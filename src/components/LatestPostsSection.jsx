@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { PropTypes } from "prop-types";
 import {
   Grid,
@@ -50,16 +50,15 @@ const LatestPostsSection = (props) => {
 
   return (
     <Grid container spacing={2} className={classes.latestPostWrapper}>
-   
       <Grid item xs={12}>
         <Typography variant="h4" component="h5" color="inherit">
           Latest Posts
         </Typography>
       </Grid>
- 
-      {latestPosts.map((post) => (       
-        <Grid item xs={12} md={4} key={post.id}>  
-         <Grow in={enableTransition} timeout={1000}>        
+
+      {latestPosts.map((post) => (
+        <Grid item xs={12} md={4} key={post.id}>
+          <Grow in={enableTransition} timeout={1000}>
             <Card className={classes.postCard}>
               <CardActionArea className={classes.CardActionArea}>
                 <CardMedia
@@ -94,12 +93,10 @@ const LatestPostsSection = (props) => {
                   Read More
                 </Button>
               </CardActions>
-            </Card>    
-             </Grow>   
+            </Card>
+          </Grow>
         </Grid>
-         
-      ))      }    
-     
+      ))}
     </Grid>
   );
 };
