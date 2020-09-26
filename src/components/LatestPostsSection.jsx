@@ -104,5 +104,5 @@ const LatestPostsSection = (props) => {
 export default LatestPostsSection;
 
 LatestPostsSection.propTypes = {
-  latestPosts: PropTypes.array.isRequired,
+  latestPosts: PropTypes.array,
 };

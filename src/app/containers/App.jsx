@@ -1,16 +1,15 @@
 import React from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
-import MainPage from "./pages/MainPage";
+import MainPage from "./blog/MainPage";
 
 const theme = createMuiTheme({
   palette: {
     type: "dark",
     primary: {
-      light: "#FFCB9A",
-      main: "#116466",
-      dark: "#2C3531",
-      contrastText: "#D9B08C",
+      light: "#4ebaaa",
+      main: "#00897b",
+      dark: "#005b4f",
+      contrastText: "#000000",
     },
     secondary: {
       light: "#ffff89",

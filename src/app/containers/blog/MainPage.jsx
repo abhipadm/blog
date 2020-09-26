@@ -5,9 +5,9 @@ import Header from "../components/Header";
 import CoverSection from "../components/CoverSection";
 import LatestPostsSection from "../components/LatestPostsSection";
 import AllPostSection from "../components/AllPostSection";
-//import getBlogList from "../services/BlogPostService";
+import getBlogList from "../services/BlogPostService";
 
-//getBlogList();
+getBlogList();
 
 const blogCover = {
   title:
