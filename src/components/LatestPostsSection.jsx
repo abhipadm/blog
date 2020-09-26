@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   postCard: {
     minHeight: 330,
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.common.white,
   },
   cardMedia: {
     height: 350,
@@ -89,7 +89,7 @@ const LatestPostsSection = (props) => {
               </CardActionArea>
 
               <CardActions disableSpacing>
-                <Button size="small" color="primary">
+                <Button size="small" variant="contained" color="secondary">
                   Read More
                 </Button>
               </CardActions>

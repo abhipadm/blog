@@ -12,14 +12,21 @@ import {
   TimelineDot,
 } from "@material-ui/lab";
 
-import { Paper, Typography } from "@material-ui/core";
+import { Paper, Typography, Button, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    padding: "6px 16px",
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.primary.main,
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
+  },
+  timelineSeparator: {
+    padding: "8px 16px",
+  },
+  readMoreBox: {
+    padding: "8px 1px",
   },
 }));
 
@@ -39,12 +46,19 @@ const AllPostSection = (props) => {
             <TimelineConnector />
           </TimelineSeparator>
 
-          <TimelineContent>
+          <TimelineContent color="primary">
             <Paper elevation={3} className={classes.paper}>
-              <Typography variant="h6" component="h1">
+              <Typography variant="h5" component="h1">
                 {post.title}
               </Typography>
-              <Typography>{post.shortDescription}</Typography>
+              <Typography variant="body2" component="p">
+                {post.shortDescription}
+              </Typography>
+              <Box color="text.primary" className={classes.readMoreBox}>
+                <Button size="small" variant="contained" color="primary">
+                  Read More
+                </Button>
+              </Box>
             </Paper>
           </TimelineContent>
         </TimelineItem>

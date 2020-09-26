@@ -5,12 +5,12 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   coverPaper: {
     position: "relative",
-    backgroundImage: `url('https://source.unsplash.com/1080x350/?technology')`,
+    backgroundImage: `url('https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=350&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1080')`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     marginBottom: theme.spacing(4),
-    height: 350,
+    height: 450,
     overflow: "hidden",
   },
   coverImage: {
@@ -31,7 +31,7 @@ const CoverSection = () => {
     <Paper elevation={3} xs={12} className={classes.coverPaper}>
       <img
         className={classes.coverImage}
-        src="https://source.unsplash.com/1080x350/?technology"
+        src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=350&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1080"
         alt="test"
       />
     </Paper>
