@@ -1,26 +1,31 @@
 import React from "react";
-import { Paper } from "@material-ui/core";
+import { Paper, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   coverPaper: {
     position: "relative",
-    backgroundImage: `url('https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=350&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1080')`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     marginBottom: theme.spacing(4),
     height: 450,
     overflow: "hidden",
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
+    flexDirection: "column",
+    display: "flex",
+    justifyContent: "center",
+    backgroundImage: `url('https://images.unsplash.com/photo-1510070009289-b5bc34383727?ixlib=rb-1.2.1&h=200&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')`,
   },
-  coverImage: {
-    display: "none",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper,
-    width: 1,
-    height: "350px",
+  phrase1: {
+    padding: "6px 15px",
+  },
+  phrase2: {
+    padding: "8px 17px",
+  },
+  phrase3: {
+    padding: "10px 19px",
   },
 }));
 
@@ -29,11 +34,17 @@ const CoverSection = () => {
 
   return (
     <Paper elevation={3} xs={12} className={classes.coverPaper}>
-      <img
-        className={classes.coverImage}
-        src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=350&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1080"
-        alt="test"
-      />
+      <Grid container direction="row" justify="center" alignItems="center">
+        <Grid item className={classes.phrase1}>
+          <Typography variant="h3">Make it work</Typography>
+        </Grid>
+        <Grid item className={classes.phrase2}>
+          <Typography variant="h4">Make it right</Typography>
+        </Grid>
+        <Grid item className={classes.phrase3}>
+          <Typography variant="h5">Make it fast</Typography>
+        </Grid>
+      </Grid>
     </Paper>
   );
 };

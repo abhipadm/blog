@@ -55,7 +55,6 @@ const latestPosts = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.primary,
   },
 }));
 
@@ -64,7 +63,7 @@ export default function MainPage() {
 
   return (
     <div className={classes.root}>
-      <Header title="Debug Inside" />
+      <Header />
       <CoverSection />
       <LatestPostsSection latestPosts={latestPosts} />
       <AllPostSection allPosts={latestPosts} />
