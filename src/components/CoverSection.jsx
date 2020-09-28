@@ -4,11 +4,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   coverPaper: {
-    position: "relative",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    marginBottom: theme.spacing(4),
     height: 450,
     overflow: "hidden",
     backgroundColor: theme.palette.secondary.main,
